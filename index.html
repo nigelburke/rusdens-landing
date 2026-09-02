@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rusdens · Career coaching for finance professionals</title>
+<meta name="description" content="A clear read on where you are and what's next for mid-career finance professionals. Start with a 7-question diagnostic. $75/mo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --purple: #533afd;
+    --purple-hover: #4434d4;
+    --navy: #061b31;
+    --label: #273951;
+    --body: #64748d;
+    --border: #e5edf5;
+    --bg-dark: #1c1e54;
+    --shadow-brand: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px;
+    --ring: #533afd;
+    --sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: var(--sans);
+    font-feature-settings: "ss01";
+    color: var(--body);
+    background: #fff;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--purple); text-decoration: none; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* Navigation */
+  nav.site {
+    position: sticky; top: 0; z-index: 50;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border);
+  }
+  nav.site .inner { display: flex; align-items: center; justify-content: space-between; height: 64px; }
+  .brand { font-weight: 600; color: var(--navy); letter-spacing: 0.01em; font-size: 18px; }
+  .nav-cta {
+    background: var(--purple); color: #fff; font-weight: 500;
+    padding: 9px 18px; border-radius: 6px; font-size: 15px;
+  }
+  .nav-cta:hover { background: var(--purple-hover); color: #fff; }
+
+  /* Hero */
+  header.hero { padding: 96px 0 64px; text-align: center; }
+  .eyebrow {
+    display: inline-block; font-weight: 500; font-size: 13px; color: var(--purple);
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px;
+  }
+  header.hero h1 {
+    font-weight: 300; color: var(--navy);
+    font-size: 56px; line-height: 1.08; letter-spacing: -1.4px;
+    max-width: 760px; margin: 0 auto;
+  }
+  header.hero .lede {
+    font-weight: 300; font-size: 19px; color: var(--body);
+    max-width: 640px; margin: 28px auto 0; line-height: 1.5;
+  }
+  .hero-actions { margin-top: 36px; }
+  .btn {
+    display: inline-block; background: var(--purple); color: #fff;
+    padding: 15px 30px; border-radius: 6px; font-weight: 500; font-size: 17px;
+    box-shadow: var(--shadow-brand);
+  }
+  .btn:hover { background: var(--purple-hover); color: #fff; }
+  .hero-proof { margin-top: 20px; font-size: 14px; color: var(--body); font-weight: 400; }
+  .hero-proof .dot { margin: 0 10px; color: var(--border); }
+  .hero-guarantee { margin-top: 32px; }
+  .hero-guarantee .guarantee-box {
+    display: inline-block; border: 1px solid var(--border); border-radius: 8px;
+    padding: 16px 28px; background: #fff; box-shadow: var(--shadow-brand);
+    text-align: left; max-width: 560px;
+  }
+  .hero-guarantee .g-label { font-weight: 500; font-size: 12px; color: var(--purple); text-transform: uppercase; letter-spacing: 0.04em; margin-bottom: 4px; }
+  .hero-guarantee .g-text { font-weight: 300; font-size: 16px; color: var(--navy); }
+  .hero-guarantee .g-text b { font-weight: 500; }
+
+  /* Sections */
+  section { padding: 72px 0; }
+  .section-head { max-width: 640px; margin-bottom: 44px; }
+  .kicker { font-weight: 500; font-size: 13px; color: var(--purple); letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 12px; }
+  h2 { font-weight: 300; color: var(--navy); font-size: 38px; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 16px; }
+  .section-head p { font-weight: 300; font-size: 17px; color: var(--body); }
+
+  /* Offer cards */
+  .offer-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .offer-card {
+    background: #fff; border: 1px solid var(--border); border-radius: 8px;
+    padding: 28px; box-shadow: var(--shadow-brand);
+  }
+  .offer-card h3 { font-weight: 400; color: var(--navy); font-size: 20px; letter-spacing: -0.2px; margin-bottom: 8px; text-align: left; }
+  .offer-card p { font-weight: 300; font-size: 16px; color: var(--body); }
+
+  /* CTA band */
+  .cta-band { text-align: center; }
+  .cta-band h2 { margin-bottom: 12px; }
+  .cta-band p { font-weight: 300; font-size: 17px; max-width: 560px; margin: 0 auto 32px; }
+  .cta-proof { margin-top: 18px; font-size: 14px; color: var(--body); }
+  .cta-proof .dot { margin: 0 10px; color: var(--border); }
+
+  /* Honesty */
+  .honesty { max-width: 640px; }
+  .honesty h3 { font-weight: 500; color: var(--navy); font-size: 15px; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 12px; }
+  .honesty p { font-weight: 300; font-size: 16px; color: var(--body); }
+
+  /* Footer */
+  footer.site { border-top: 1px solid var(--border); padding: 40px 0 56px; }
+  footer.site p { font-weight: 300; font-size: 14px; color: var(--body); }
+
+  /* Focus + reduced motion */
+  a:focus-visible, .btn:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; border-radius: 6px; }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+  /* Responsive */
+  @media (max-width: 640px) {
+    .wrap { padding: 0 20px; }
+    header.hero { padding: 64px 0 48px; }
+    header.hero h1 { font-size: 32px; letter-spacing: -0.64px; }
+    .offer-grid { grid-template-columns: 1fr; }
+    section { padding: 48px 0; }
+    h2 { font-size: 28px; letter-spacing: -0.4px; }
+    .guarantee { padding: 40px 24px; }
+    .hero-proof .dot { margin: 0 6px; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="site">
+  <div class="wrap inner">
+    <span class="brand">Rusdens</span>
+    <a class="nav-cta" href="https://umoc4m0s.rpcl.host/form/34a24299-ab8e-4f0c-9902-bac5536eda2b">Start your diagnostic</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Career coaching for finance professionals</span>
+    <h1>You're good at your job. That's not why you're stuck.</h1>
+    <p class="lede">You're a mid-career finance professional. The work gets done, but the direction doesn't arrive. At an SME, headcount doesn't scale and the strategic seat you're aiming for simply isn't handed out. You'll know where you're stuck, and what to do about it, in 7 days.</p>
+    <div class="hero-actions">
+      <a class="btn" href="https://umoc4m0s.rpcl.host/form/34a24299-ab8e-4f0c-9902-bac5536eda2b">Upload your resume to start</a>
+      <p class="hero-proof">Free 7-day diagnostic <span class="dot">·</span> No call required</p>
+    </div>
+    <div class="hero-guarantee">
+      <div class="guarantee-box">
+        <div class="g-label">The guarantee</div>
+        <div class="g-text"><b>3 career conversations with decision-makers in 30 days</b>, or cancel and get your money back.</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section>
+    <div class="wrap">
+      <div class="section-head">
+        <span class="kicker">What you get</span>
+        <h2>Structure on your side, not more information.</h2>
+        <p>Rusdens is a $75/mo subscription. It is coaching, not a job service, and nothing here promises an offer or a salary figure.</p>
+      </div>
+      <div class="offer-grid">
+        <div class="offer-card">
+          <h3>Weekly AI-driven career audit</h3>
+          <p>Tracks your situation instead of letting it drift to a twice-yearly reflection.</p>
+        </div>
+        <div class="offer-card">
+          <h3>Monthly opportunity scan</h3>
+          <p>Surfaces current, data-grounded angles on your next move.</p>
+        </div>
+        <div class="offer-card">
+          <h3>Private playbook library</h3>
+          <p>For moving from finance function to strategic finance.</p>
+        </div>
+        <div class="offer-card">
+          <h3>Bi-weekly group Q&amp;A</h3>
+          <p>With peers facing the same ceiling.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta-band">
+    <div class="wrap">
+      <h2>Ready to see your situation clearly?</h2>
+      <p>Upload your resume and answer seven short questions. You get a diagnostic that names what's actually holding you back, and an honest read on the next move. No commitment.</p>
+      <a class="btn" href="https://umoc4m0s.rpcl.host/form/34a24299-ab8e-4f0c-9902-bac5536eda2b">Upload your resume to start your diagnostic</a>
+      <p class="cta-proof">$37.50/mo founding price <span class="dot">·</span> cap of 25 members</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap honesty">
+      <h3>What Rusdens is not</h3>
+      <p>Not a recruitment service. Not for executives. Not free. The guarantee is about conversations with decision-makers, because that's what the product actually delivers.</p>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <p>Rusdens &middot; Online career coaching for finance professionals at Australian SMEs (20-200 employees), where the ceiling is real and headcount doesn't scale.</p>
+  </div>
+</footer>
+
+</body>
+</html>
