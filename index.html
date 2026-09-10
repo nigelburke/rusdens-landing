@@ -16,7 +16,7 @@
     --label: #273951;
     --body: #64748d;
     --border: #e5edf5;
-    --bg-dark: #1c1e54;
+    --tint: #f6f9fc;
     --shadow-brand: rgba(50,50,93,0.25) 0px 30px 45px -30px, rgba(0,0,0,0.1) 0px 18px 36px -18px;
     --ring: #533afd;
     --sans: 'Source Sans 3', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
@@ -33,6 +33,7 @@
   }
   a { color: var(--purple); text-decoration: none; }
   .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .col { max-width: 700px; margin: 0 auto; }
 
   /* Navigation */
   nav.site {
@@ -51,52 +52,58 @@
   .nav-cta:hover { background: var(--purple-hover); color: #fff; }
 
   /* Hero */
-  header.hero { padding: 96px 0 64px; text-align: center; }
+  header.hero { padding: 80px 0 52px; text-align: center; }
   .eyebrow {
     display: inline-block; font-weight: 500; font-size: 13px; color: var(--purple);
-    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 24px;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 22px;
   }
   header.hero h1 {
     font-weight: 300; color: var(--navy);
-    font-size: 56px; line-height: 1.08; letter-spacing: -1.4px;
-    max-width: 760px; margin: 0 auto;
+    font-size: 52px; line-height: 1.09; letter-spacing: -1.3px;
+    max-width: 720px; margin: 0 auto;
   }
   header.hero .lede {
     font-weight: 300; font-size: 19px; color: var(--body);
-    max-width: 640px; margin: 28px auto 0; line-height: 1.5;
+    max-width: 620px; margin: 26px auto 0; line-height: 1.5;
   }
   header.hero .hero-ask {
     font-weight: 400; font-size: 19px; color: var(--navy);
-    max-width: 640px; margin: 24px auto 0; line-height: 1.5;
+    max-width: 620px; margin: 22px auto 0; line-height: 1.5;
   }
-  .hero-actions { margin-top: 36px; }
+  .hero-actions { margin-top: 32px; }
   .btn {
     display: inline-block; background: var(--purple); color: #fff;
     padding: 15px 30px; border-radius: 6px; font-weight: 500; font-size: 17px;
     box-shadow: var(--shadow-brand);
   }
   .btn:hover { background: var(--purple-hover); color: #fff; }
-  .hero-proof { margin-top: 20px; font-size: 14px; color: var(--body); font-weight: 400; }
+  .hero-proof { margin-top: 18px; font-size: 14px; color: var(--body); font-weight: 400; }
   .hero-proof .dot { margin: 0 10px; color: var(--border); }
 
-  /* Sections */
-  section { padding: 72px 0; }
-  h2 { font-weight: 300; color: var(--navy); font-size: 38px; line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 16px; }
+  /* Qualify band */
+  .band {
+    background: var(--tint);
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+    padding: 48px 0;
+  }
+  .band-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 48px; max-width: 880px; margin: 0 auto; }
+  .band h3 {
+    font-weight: 500; color: var(--navy); font-size: 13px;
+    letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 10px;
+  }
+  .band p { font-weight: 300; font-size: 16px; color: var(--body); }
 
-  /* CTA band */
-  .cta-band { text-align: center; padding-top: 24px; }
-  .cta-band h2 { margin-bottom: 32px; }
-  .cta-proof { margin-top: 18px; font-size: 14px; color: var(--body); }
-  .cta-proof .dot { margin: 0 10px; color: var(--border); }
-
-  /* Notes */
-  .notes { max-width: 640px; }
-  .notes .block + .block { margin-top: 40px; }
-  .notes h3 { font-weight: 500; color: var(--navy); font-size: 15px; letter-spacing: 0.02em; text-transform: uppercase; margin-bottom: 12px; }
-  .notes p { font-weight: 300; font-size: 16px; color: var(--body); }
+  /* Closing CTA */
+  .cta-band { text-align: center; padding: 60px 0 72px; }
+  .cta-band h2 {
+    font-weight: 300; color: var(--navy); font-size: 38px;
+    line-height: 1.12; letter-spacing: -0.6px; margin-bottom: 30px;
+  }
 
   /* Footer */
-  footer.site { border-top: 1px solid var(--border); padding: 40px 0 56px; }
+  footer.site { border-top: 1px solid var(--border); padding: 32px 0 40px; }
+  footer.site .wrap { display: flex; justify-content: space-between; gap: 24px; flex-wrap: wrap; }
   footer.site p { font-weight: 300; font-size: 14px; color: var(--body); }
 
   /* Focus + reduced motion */
@@ -104,13 +111,16 @@
   @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
   /* Responsive */
-  @media (max-width: 640px) {
+  @media (max-width: 760px) {
     .wrap { padding: 0 20px; }
-    header.hero { padding: 64px 0 48px; }
+    header.hero { padding: 56px 0 44px; }
     header.hero h1 { font-size: 32px; letter-spacing: -0.64px; }
-    section { padding: 48px 0; }
-    h2 { font-size: 28px; letter-spacing: -0.4px; }
+    header.hero .lede, header.hero .hero-ask { font-size: 17px; }
     .hero-proof .dot { margin: 0 6px; }
+    .band { padding: 40px 0; }
+    .band-grid { grid-template-columns: 1fr; gap: 32px; }
+    .cta-band { padding: 52px 0 60px; }
+    .cta-band h2 { font-size: 28px; letter-spacing: -0.4px; }
   }
 </style>
 </head>
@@ -124,7 +134,7 @@
 </nav>
 
 <header class="hero">
-  <div class="wrap">
+  <div class="wrap col">
     <span class="eyebrow">For mid-career finance professionals</span>
     <h1>You're good at your job. That's not why you're stuck.</h1>
     <p class="lede">You're a mid-career finance professional. The work gets done, but the direction doesn't arrive. At an SME, headcount doesn't scale and the strategic seat you're aiming for simply isn't handed out.</p>
@@ -137,31 +147,33 @@
 </header>
 
 <main>
-  <section>
-    <div class="wrap notes">
-      <div class="block">
-        <h3>Who it's for</h3>
-        <p>Mid-career finance professionals at Australian SMEs, 20 to 200 employees. The ceiling is real there, and headcount doesn't scale.</p>
-      </div>
-      <div class="block">
-        <h3>What this is not</h3>
-        <p>Not a recruitment service. Not for executives. Your resume is read to produce your diagnostic, not passed to recruiters or employers.</p>
+  <section class="band">
+    <div class="wrap">
+      <div class="band-grid">
+        <div>
+          <h3>Who it's for</h3>
+          <p>Mid-career finance professionals at Australian SMEs, 20 to 200 employees. The ceiling is real there, and headcount doesn't scale.</p>
+        </div>
+        <div>
+          <h3>What this is not</h3>
+          <p>Not a recruitment service. Not for executives. Your resume is read to produce your diagnostic, not passed to recruiters or employers.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <section class="cta-band">
-    <div class="wrap">
+    <div class="wrap col">
       <h2>Get your read.</h2>
       <a class="btn" href="https://umoc4m0s.rpcl.host/form/34a24299-ab8e-4f0c-9902-bac5536eda2b">Upload your resume</a>
-      <p class="cta-proof">Free <span class="dot">·</span> No call required <span class="dot">·</span> No obligation</p>
     </div>
   </section>
 </main>
 
 <footer class="site">
   <div class="wrap">
-    <p>Rusdens &middot; A free resume diagnostic for mid-career finance professionals at Australian SMEs (20-200 employees), where the ceiling is real and headcount doesn't scale.</p>
+    <p>Rusdens &middot; Melbourne, Australia</p>
+    <p>Your resume is used only to produce your diagnostic.</p>
   </div>
 </footer>
 
